@@ -9,11 +9,22 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    @IBOutlet weak var knob: Knob!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        knob.lineWidth = 5
+        knob.pointerLength = 50
+        
+        knob.setValue(0.0)
+        
+       
+        
     }
+    
 
 
 }
