@@ -62,8 +62,9 @@ class Knob: UIControl {
   }
   
     private func commonInit() {
+        
         renderer.updateBounds(bounds)
-        renderer.color = tintColor
+        renderer.color = UIColor(named: "navyBlue") ?? .blue
         renderer.setPointerAngle(renderer.startAngle, animated: false)
         
         layer.addSublayer(renderer.trackLayer)
@@ -123,6 +124,8 @@ class Knob: UIControl {
         sendActions(for: .valueChanged)
       }
     }
+    
+    print(value)
 
   }
 
@@ -131,18 +134,22 @@ class Knob: UIControl {
 }
 
 private class KnobRenderer {
+    
+    let trackLayer = CAShapeLayer()
+    let pointerLayer = CAShapeLayer()
   
-  var color: UIColor = .blue {
+  var color: UIColor = .black {
     didSet {
       trackLayer.strokeColor = color.cgColor
       pointerLayer.strokeColor = color.cgColor
+        //pointerLayer.strokeColor = UIColor(named: "water")?.cgColor
     }
   }
   
   var lineWidth: CGFloat = 2 {
     didSet {
       trackLayer.lineWidth = lineWidth
-      pointerLayer.lineWidth = lineWidth
+      pointerLayer.lineWidth = lineWidth //* 2
       updateTrackLayerPath()
       updatePointerLayerPath()
     }
@@ -193,8 +200,7 @@ private class KnobRenderer {
   }
 
   
-  let trackLayer = CAShapeLayer()
-  let pointerLayer = CAShapeLayer()
+
 
     init() {
         trackLayer.fillColor = UIColor.clear.cgColor
