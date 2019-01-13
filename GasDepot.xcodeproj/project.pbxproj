@@ -15,6 +15,7 @@
 		7423A50321E83FF900365D53 /* Knob.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7423A50221E83FF900365D53 /* Knob.swift */; };
 		7472103521EACBFF006DCFF0 /* CarTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7472103421EACBFF006DCFF0 /* CarTableViewController.swift */; };
 		7472103721EACC75006DCFF0 /* CarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7472103621EACC75006DCFF0 /* CarModel.swift */; };
+		7472103B21EAD442006DCFF0 /* CarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7472103A21EAD442006DCFF0 /* CarTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		7423A50221E83FF900365D53 /* Knob.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Knob.swift; sourceTree = "<group>"; };
 		7472103421EACBFF006DCFF0 /* CarTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarTableViewController.swift; sourceTree = "<group>"; };
 		7472103621EACC75006DCFF0 /* CarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarModel.swift; sourceTree = "<group>"; };
+		7472103A21EAD442006DCFF0 /* CarTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,7 @@
 			children = (
 				7417699B21E1AF1D003B4D26 /* ViewController.swift */,
 				7472103421EACBFF006DCFF0 /* CarTableViewController.swift */,
+				7472103A21EAD442006DCFF0 /* CarTableViewCell.swift */,
 				7423A50221E83FF900365D53 /* Knob.swift */,
 			);
 			path = Controller;
@@ -162,6 +165,7 @@
 			files = (
 				7472103521EACBFF006DCFF0 /* CarTableViewController.swift in Sources */,
 				7472103721EACC75006DCFF0 /* CarModel.swift in Sources */,
+				7472103B21EAD442006DCFF0 /* CarTableViewCell.swift in Sources */,
 				7417699C21E1AF1D003B4D26 /* ViewController.swift in Sources */,
 				7423A50321E83FF900365D53 /* Knob.swift in Sources */,
 				7417699A21E1AF1D003B4D26 /* AppDelegate.swift in Sources */,
