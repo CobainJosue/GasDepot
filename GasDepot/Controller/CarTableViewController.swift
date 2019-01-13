@@ -9,6 +9,8 @@
 import UIKit
 
 class CarTableViewController: UITableViewController {
+    
+    var selected: CarModel?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,9 +53,16 @@ class CarTableViewController: UITableViewController {
         tableView.deselectRow(at: indexPath, animated: true)
         
         let cell = tableView.cellForRow(at: indexPath) as! CarTableViewCell
-        
         let car = cars[indexPath.row]
+        
+        if let selected = selected {
+            selected.toggleCheck()
+            #warning("Al hacer reloadData() se deben pintar todas las celdas de nuevo")
+            tableView.reloadData()
+        }
+        
         car.toggleCheck()
+        self.selected = car
         cell.showCheck(check: car.isSelected)
     }
 
