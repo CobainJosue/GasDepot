@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var leftBarButtonItem: UIBarButtonItem!
     @IBOutlet weak var rightBarButtonItem: UIBarButtonItem!
     
+    let defaults = UserDefaults.standard
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +27,9 @@ class ViewController: UIViewController {
         
         knob.addTarget(self, action: #selector(ViewController.handleValueChanged(_:)), for: .valueChanged)
         
+        let valueSaved = defaults.float(forKey: "value")
+        indicatorLabel.text = "\(String(format: "%.2f", valueSaved * 100)) %"
+        knob.setValue(valueSaved)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -43,6 +47,8 @@ class ViewController: UIViewController {
         //actualizar porcentaje
         
         indicatorLabel.text = "\(String(format: "%.2f", knob.value * 100)) %"
+        
+        defaults.set(knob.value, forKey: "value")
         
     }
     

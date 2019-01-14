@@ -17,13 +17,9 @@ class CarTableViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         
-        print("view will appear")
-        
         let car = CarModel(agency: "", car: "", year: 0)
         
         if let selected = car.readData(){
-            print("viewDidLoad selected: \(selected)")
-            print(cars[selected].isSelected)
             cars[selected].isSelected = true
             // tableView.reloadData()
         }
@@ -66,7 +62,6 @@ class CarTableViewController: UITableViewController {
         
         
         if let selected = car.readData(){
-            print("selected: \(selected)")
             cars[selected].toggleCheck()
             #warning("Al hacer reloadData() se deben pintar todas las celdas de nuevo")
             tableView.reloadData()

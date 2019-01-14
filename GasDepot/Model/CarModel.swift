@@ -33,7 +33,6 @@ class CarModel {
     
     func readData() -> Int? {
         let myCar = defaults.integer(forKey: "MyCar")
-        print("myCar: \(myCar)")
         if myCar == 0 {
             return nil
         } else {
