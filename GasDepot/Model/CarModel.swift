@@ -14,6 +14,8 @@ class CarModel {
     var year: Int
     var isSelected: Bool = false
     
+    let defaults = UserDefaults.standard
+    
     init(agency: String, car: String, year: Int) {
         self.agency = agency
         self.car = car
@@ -24,6 +26,21 @@ class CarModel {
         isSelected = !isSelected
     }
     
+    func saveData(choice: Int) {
+        let offset = choice + 1
+        defaults.set(offset, forKey: "MyCar")
+    }
+    
+    func readData() -> Int? {
+        let myCar = defaults.integer(forKey: "MyCar")
+        print("myCar: \(myCar)")
+        if myCar == 0 {
+            return nil
+        } else {
+            return myCar - 1
+        }
+    }
+    
 }
 
-var cars: [CarModel] = [CarModel(agency: "Pontiac", car: "G3", year: 2007), CarModel(agency: "Pontiac", car: "G3", year: 2007), CarModel(agency: "Pontiac", car: "G3", year: 2007), CarModel(agency: "Pontiac", car: "G3", year: 2007), CarModel(agency: "Pontiac", car: "G3", year: 2007),CarModel(agency: "Pontiac", car: "G3", year: 2007), CarModel(agency: "Pontiac", car: "G3", year: 2007), CarModel(agency: "Pontiac", car: "G3", year: 2007), CarModel(agency: "Pontiac", car: "G3", year: 2007), CarModel(agency: "Pontiac", car: "G3", year: 2007),CarModel(agency: "Pontiac", car: "G3", year: 2007), CarModel(agency: "Pontiac", car: "G3", year: 2007), CarModel(agency: "Pontiac", car: "G3", year: 2007), CarModel(agency: "Pontiac", car: "G3", year: 2007), CarModel(agency: "Pontiac", car: "G3", year: 2007),CarModel(agency: "Pontiac", car: "G3", year: 2007), CarModel(agency: "Pontiac", car: "G3", year: 2007), CarModel(agency: "Pontiac", car: "G3", year: 2007), CarModel(agency: "Pontiac", car: "G3", year: 2007), CarModel(agency: "Pontiac", car: "G3", year: 2007),CarModel(agency: "Pontiac", car: "G3", year: 2007), CarModel(agency: "Pontiac", car: "G3", year: 2007), CarModel(agency: "Pontiac", car: "G3", year: 2007), CarModel(agency: "Pontiac", car: "G3", year: 2007), CarModel(agency: "Pontiac", car: "G3", year: 2007),CarModel(agency: "Pontiac", car: "G3", year: 2007), CarModel(agency: "Pontiac", car: "G3", year: 2007), CarModel(agency: "Pontiac", car: "G3", year: 2007), CarModel(agency: "Pontiac", car: "G3", year: 2007), CarModel(agency: "Pontiac", car: "G3", year: 2007),CarModel(agency: "Pontiac", car: "G3", year: 2007), CarModel(agency: "Pontiac", car: "G3", year: 2007), CarModel(agency: "Pontiac", car: "G3", year: 2007), CarModel(agency: "Pontiac", car: "G3", year: 2007), CarModel(agency: "Pontiac", car: "G3", year: 2007),CarModel(agency: "Pontiac", car: "G3", year: 2007), CarModel(agency: "Pontiac", car: "G3", year: 2007), CarModel(agency: "Pontiac", car: "G3", year: 2007), CarModel(agency: "Pontiac", car: "G3", year: 2007), CarModel(agency: "Pontiac", car: "G3", year: 2007)]
+var cars: [CarModel] = [CarModel(agency: "Pontiac", car: "G3", year: 2008), CarModel(agency: "Pontiac", car: "G3", year: 2007), CarModel(agency: "Pontiac", car: "G3", year: 2007), CarModel(agency: "Pontiac", car: "G3", year: 2007), CarModel(agency: "Pontiac", car: "G3", year: 2007),CarModel(agency: "Pontiac", car: "G3", year: 2007), CarModel(agency: "Pontiac", car: "G3", year: 2007), CarModel(agency: "Pontiac", car: "G3", year: 2007), CarModel(agency: "Pontiac", car: "G3", year: 2007), CarModel(agency: "Pontiac", car: "G3", year: 2007),CarModel(agency: "Pontiac", car: "G3", year: 2007), CarModel(agency: "Pontiac", car: "G3", year: 2007), CarModel(agency: "Pontiac", car: "G3", year: 2007), CarModel(agency: "Pontiac", car: "G3", year: 2007), CarModel(agency: "Pontiac", car: "G3", year: 2007),CarModel(agency: "Pontiac", car: "G3", year: 2007), CarModel(agency: "Pontiac", car: "G3", year: 2007), CarModel(agency: "Pontiac", car: "G3", year: 2007), CarModel(agency: "Pontiac", car: "G3", year: 2007), CarModel(agency: "Pontiac", car: "G3", year: 2007),CarModel(agency: "Pontiac", car: "G3", year: 2007), CarModel(agency: "Pontiac", car: "G3", year: 2007), CarModel(agency: "Pontiac", car: "G3", year: 2007), CarModel(agency: "Pontiac", car: "G3", year: 2007), CarModel(agency: "Pontiac", car: "G3", year: 2007),CarModel(agency: "Pontiac", car: "G3", year: 2007), CarModel(agency: "Pontiac", car: "G3", year: 2007), CarModel(agency: "Pontiac", car: "G3", year: 2007), CarModel(agency: "Pontiac", car: "G3", year: 2007), CarModel(agency: "Pontiac", car: "G3", year: 2007),CarModel(agency: "Pontiac", car: "G3", year: 2007), CarModel(agency: "Pontiac", car: "G3", year: 2007), CarModel(agency: "Pontiac", car: "G3", year: 2007), CarModel(agency: "Pontiac", car: "G3", year: 2007), CarModel(agency: "Pontiac", car: "G3", year: 2007),CarModel(agency: "Pontiac", car: "G3", year: 2007), CarModel(agency: "Pontiac", car: "G3", year: 2007), CarModel(agency: "Pontiac", car: "G3", year: 2007), CarModel(agency: "Pontiac", car: "G3", year: 2007), CarModel(agency: "Pontiac", car: "G3", year: 2007)]

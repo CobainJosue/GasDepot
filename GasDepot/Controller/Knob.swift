@@ -53,6 +53,7 @@ class Knob: UIControl {
   
   override init(frame: CGRect) {
     super.init(frame: frame)
+    
     commonInit()
   }
   
@@ -62,6 +63,17 @@ class Knob: UIControl {
   }
   
     private func commonInit() {
+        
+        let imageView = UIImageView(image: UIImage(named: "flecha"))
+        addSubview(imageView)
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.topAnchor.constraint(equalTo: topAnchor).isActive = true
+        imageView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+        imageView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
+        imageView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
+        sendSubviewToBack(imageView)
+        
+        setNeedsDisplay()
         
         renderer.updateBounds(bounds)
         renderer.color = UIColor(named: "navyBlue") ?? .blue

@@ -9,18 +9,27 @@
 import UIKit
 
 class CarTableViewController: UITableViewController {
-    
-    var selected: CarModel?
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+        print("view will appear")
+        
+        let car = CarModel(agency: "", car: "", year: 0)
+        
+        if let selected = car.readData(){
+            print("viewDidLoad selected: \(selected)")
+            print(cars[selected].isSelected)
+            cars[selected].isSelected = true
+            // tableView.reloadData()
+        }
+    }
+    
+    
 
     // MARK: - Table view data source
 
@@ -55,14 +64,16 @@ class CarTableViewController: UITableViewController {
         let cell = tableView.cellForRow(at: indexPath) as! CarTableViewCell
         let car = cars[indexPath.row]
         
-        if let selected = selected {
-            selected.toggleCheck()
+        
+        if let selected = car.readData(){
+            print("selected: \(selected)")
+            cars[selected].toggleCheck()
             #warning("Al hacer reloadData() se deben pintar todas las celdas de nuevo")
             tableView.reloadData()
         }
         
         car.toggleCheck()
-        self.selected = car
+        car.saveData(choice: indexPath.row)
         cell.showCheck(check: car.isSelected)
     }
 

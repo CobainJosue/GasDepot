@@ -23,7 +23,8 @@
                                 <rect key="frame" x="20" y="99" width="335" height="335"/>
                                 <color key="backgroundColor" name="lightBlue"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="xBK-bt-0Db" secondAttribute="height" multiplier="1:1" id="X44-4Z-by4"/>
+                                    <constraint firstAttribute="width" secondItem="xBK-bt-0Db" secondAttribute="height" multiplier="1:1" id="HfD-aQ-AI9"/>
+                                    <constraint firstAttribute="width" constant="335" id="Y9Q-WN-Tln"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="atD-3q-b9H">
@@ -41,10 +42,8 @@
                         </subviews>
                         <color key="backgroundColor" name="water"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xBK-bt-0Db" secondAttribute="trailing" constant="20" id="4MH-b6-O0E"/>
                             <constraint firstItem="xBK-bt-0Db" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="F69-sF-Wc4"/>
                             <constraint firstItem="atD-3q-b9H" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="FlT-sb-vrC"/>
-                            <constraint firstItem="xBK-bt-0Db" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="JlX-jl-Gpe"/>
                             <constraint firstItem="t8k-LI-uie" firstAttribute="top" secondItem="xBK-bt-0Db" secondAttribute="bottom" constant="52" id="QN7-1b-uIZ"/>
                             <constraint firstItem="atD-3q-b9H" firstAttribute="top" secondItem="t8k-LI-uie" secondAttribute="bottom" constant="8" id="jbX-Xj-lB4"/>
                             <constraint firstItem="t8k-LI-uie" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="tEs-ip-O4m"/>
@@ -118,6 +117,8 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" name="lightBlue"/>
+                                <color key="tintColor" name="navyBlue"/>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -155,6 +156,9 @@
         </namedColor>
         <namedColor name="lightBlue">
             <color red="0.80392156862745101" green="1" blue="0.92156862745098034" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="navyBlue">
+            <color red="0.027450980392156862" green="0.27058823529411763" blue="0.43529411764705883" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="water">
             <color red="0.0" green="0.62352941176470589" blue="0.61568627450980395" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
